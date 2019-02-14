@@ -4,6 +4,8 @@ public class Deck {
 
     private ArrayList<Card> deckOfCards;
 
+
+
     public Deck(){
         this.deckOfCards = new ArrayList<>();
     }
@@ -11,4 +13,6 @@ public class Deck {
     public int countDeck(){
         return this.deckOfCards.size();
     }
+
+
 }
