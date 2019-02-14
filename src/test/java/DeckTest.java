@@ -6,7 +6,7 @@ public class DeckTest {
 
     @Before
     public void before(){
-        deck = new Deck()
+        deck = new Deck();
     }
 
 }
