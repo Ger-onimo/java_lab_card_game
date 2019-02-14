@@ -1,58 +1,38 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
 import static org.junit.Assert.assertEquals;
 
 public class CardTest {
 
-    private Card card;
+    private Card card1;
+    private Card card2;
 
     @Before
     public void before(){
-        card = new Card(SuitType.HEARTS, RankType.KING);
-
+        card1 = new Card(SuitType.HEARTS, RankType.KING);
+        card2 = new Card(SuitType.DIAMONDS, RankType.TWO);
     }
 
     @Test
     public void canGetSuit(){
-        assertEquals(SuitType.HEARTS, card.getSuit());
+        assertEquals(SuitType.HEARTS, card1.getSuit());
     }
 
     @Test
     public void canGetRank(){
-        assertEquals(RankType.KING, card.getRank());
+        assertEquals(RankType.KING, card1.getRank());
     }
 
     @Test
-    public void canAddSuitToList(){
-        card.addSuitToList(SuitType.HEARTS);
-        assertEquals(1, card.countSuitsInList());
+    public void canGetCardValueFaceCardKing(){
+        assertEquals(10, card1.getValue());
     }
 
     @Test
-    public void canAddAllSuitsToDeck(){
-        card.addAllSuitsToList();
-        assertEquals(4, card.countSuitsInList());
+    public void canGetCardValueNumberCardTwo(){
+        assertEquals(2, card2.getValue());
     }
-
-//    @Test
-//    public void canAddRankToList(){
-//        card.addRankToList(RankType.KING);
-//        assertEquals(1, card.countRanksInList());
-//    }
-
-    @Test
-    public void canAddAllRankToDeck(){
-        card.addAllRanksToList();
-        assertEquals(13, card.countRanksInList());
-    }
-
-    @Test
-    public void canCountDeckOfCards(){
-        assertEquals(52, card.createDeckOfCards());
-    }
-
 
 }
 
